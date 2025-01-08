@@ -44,3 +44,19 @@ print("Player 1's Hand:")
 print(player1)
 print("\nPlayer 2's Hand:")
 print(player2)
+
+#grocery list organizer
+from collections import Counter
+from queue import Queue 
+grocery_items={
+    "1: Sugar", "2:Rice", "3:Honey", "4:Meat", "5: Vegetables", "6:Fruits", "7:Juice", "8:Bread", "9:Honey", "10:Juice" }
+item_count=Counter(grocery_items)
+print("Number of groceries:")
+for item, count in item_count.items():
+    print(f"{item}:{count}")
+item_queue= Queue()
+for item in grocery_items:
+    item_queue.put(grocery_items)
+print("Processing items:")
+while not item_queue.empty():
+    print(item_queue.get())
